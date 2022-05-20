@@ -36,6 +36,7 @@ public class FormattedInput {
                         throw new Exception("Invalid input");
                     }
                 }
+
                 case "%f" -> {
                 try {
                     result.add(Double.valueOf(inputs[i]));
@@ -44,13 +45,15 @@ public class FormattedInput {
                     throw new Exception("Invalid input");
                 }
             }
-            case "%s" -> result.add(inputs[i]);
-                case "%c" -> {
-                    if (inputs[i].length() > 1)
-                        throw new Exception("Invalid input");
-                    else
-                        result.add(inputs[i].charAt(0));
-                }
+
+                case "%s" -> result.add(inputs[i]);
+                    case "%c" -> {
+                        if (inputs[i].length() > 1)
+                            throw new Exception("Invalid input");
+                        else
+                            result.add(inputs[i].charAt(0));
+                    }
+
                 default -> throw new Exception("Wrong format");
 
             }

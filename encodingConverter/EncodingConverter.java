@@ -20,6 +20,7 @@ public class EncodingConverter {
             String line;
             while ((line = bfr.readLine()) !=  null) {
                 bfw.write(line);
+                bfw.newLine();
             }
 
             bfw.flush();
